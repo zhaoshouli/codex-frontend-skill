@@ -1,7 +1,7 @@
 interface:
-  display_name: "Frontend Implementation"
-  short_description: "Build and verify browser frontends"
-  default_prompt: "Use $frontend-implementation to build the requested frontend and verify it in a real browser."
+  display_name: "前端实现"
+  short_description: "构建并验证浏览器前端界面"
+  default_prompt: "使用 $frontend-implementation 构建请求的前端界面，并在真实浏览器中验证。"
 
 policy:
   allow_implicit_invocation: true

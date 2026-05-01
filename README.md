@@ -1,28 +1,28 @@
-# Codex Frontend Skill
+# Codex 前端实现 Skill
 
-A reusable Codex skill for implementing frontend apps, pages, and interactive tools with a practical build-and-verify loop.
+这是一个可复用的 Codex skill，用于实现前端应用、页面和交互式工具，并配套实际可执行的构建与浏览器验收流程。
 
 ## Skill
 
-- `frontend-implementation`: Use when Codex is asked to build, modify, or polish a web frontend, including React/Vite apps, static HTML/CSS/JS pages, dashboards, forms, and browser-based tools.
+- `frontend-implementation`：当 Codex 需要构建、修改或打磨网页前端时使用，包括 React/Vite 应用、静态 HTML/CSS/JS 页面、仪表盘、表单和浏览器工具。
 
-## Install
+## 安装
 
-Copy the skill folder into your Codex skills directory:
+把 skill 文件夹复制到你的 Codex skills 目录：
 
 ```bash
 mkdir -p ~/.codex/skills
 cp -R skills/frontend-implementation ~/.codex/skills/
 ```
 
-Restart Codex after installing so it can discover the new skill.
+安装后重启 Codex，让它发现新的 skill。
 
-## Use
+## 使用
 
-Ask Codex to use the skill explicitly:
+可以显式要求 Codex 使用这个 skill：
 
 ```text
-Use $frontend-implementation to build this dashboard page and verify it in the browser.
+使用 $frontend-implementation 构建这个仪表盘页面，并在浏览器里验证。
 ```
 
-Codex can also invoke it automatically when the task matches the skill description.
+当任务匹配 skill 描述时，Codex 也可以自动调用它。

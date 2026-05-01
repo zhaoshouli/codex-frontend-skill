@@ -1,62 +1,62 @@
 ---
 name: frontend-implementation
-description: Use when Codex is building, modifying, or polishing a web frontend, including React/Vite apps, static HTML/CSS/JS pages, dashboards, forms, responsive layouts, and browser-based tools, and should implement the UI using existing project conventions then verify it in a real browser.
+description: 当 Codex 需要构建、修改或打磨网页前端时使用，包括 React/Vite 应用、静态 HTML/CSS/JS 页面、仪表盘、表单、响应式布局和浏览器工具；应遵循现有项目约定实现 UI，并在真实浏览器中验证。
 ---
 
-# Frontend Implementation
+# 前端实现
 
-Use this skill to turn frontend requests into working browser-visible UI with a tight implementation and verification loop.
+使用这个 skill，把前端需求变成能在浏览器中真实运行和检查的界面，并保持紧凑的实现与验收循环。
 
-## Workflow
+## 工作流程
 
-1. Inspect the project before editing.
-   - Read package files, app entrypoints, routing, component folders, styling setup, and nearby examples.
-   - Identify the framework, build command, dev server command, design system, icon library, and test tooling.
-   - Prefer existing components, tokens, utilities, and layout patterns over new abstractions.
+1. 编辑前先检查项目。
+   - 阅读 package 文件、应用入口、路由、组件目录、样式配置和相邻示例。
+   - 确认框架、构建命令、开发服务器命令、设计系统、图标库和测试工具。
+   - 优先复用现有组件、设计 token、工具函数和布局模式，而不是新建抽象。
 
-2. Define the user-facing behavior.
-   - Translate the request into concrete screens, states, controls, and interactions.
-   - Include empty, loading, error, disabled, hover/focus, and mobile states when they are relevant.
-   - Avoid creating a marketing landing page unless the user specifically asked for one.
+2. 明确面向用户的行为。
+   - 把需求拆成具体页面、状态、控件和交互。
+   - 在相关场景下覆盖空状态、加载状态、错误状态、禁用状态、悬停/聚焦状态和移动端状态。
+   - 除非用户明确要求，否则不要创建营销落地页。
 
-3. Implement in small, cohesive edits.
-   - Keep changes close to the feature boundary.
-   - Use semantic HTML, accessible labels, keyboard-friendly controls, and responsive constraints.
-   - Use the existing icon library when available. If the project uses Lucide, prefer Lucide icons for common actions.
-   - Do not add ornamental gradients, floating blobs, or unrelated decorative UI.
+3. 用小而连贯的改动实现。
+   - 把改动控制在功能边界附近。
+   - 使用语义化 HTML、可访问标签、键盘友好的控件和响应式约束。
+   - 项目已有图标库时优先使用现有图标库；如果项目使用 Lucide，常见操作优先使用 Lucide 图标。
+   - 不添加装饰性渐变、漂浮色块或与任务无关的装饰 UI。
 
-4. Verify with the actual app.
-   - Run the project's formatter, typecheck, linter, and tests when available and proportionate.
-   - Start the local dev server for apps that require one.
-   - Open the page in a browser, inspect screenshots at desktop and mobile widths, and check for blank screens, console errors, clipped text, overlap, broken assets, and unusable controls.
-   - Exercise the main interactions, not just initial render.
+4. 用真实应用验证。
+   - 在项目支持且改动风险匹配时运行格式化、类型检查、lint 和测试。
+   - 对需要开发服务器的应用，启动本地开发服务器。
+   - 在浏览器中打开页面，检查桌面和移动端宽度下的截图，确认没有空白页、控制台错误、文字截断、元素重叠、资源损坏或不可用控件。
+   - 操作主要交互，而不是只看初始渲染。
 
-5. Report the result.
-   - Summarize the files changed and the behavior delivered.
-   - Include the local URL when a dev server is running.
-   - State any verification command that could not be run.
+5. 汇报结果。
+   - 总结修改的文件和交付的行为。
+   - 如果开发服务器仍在运行，给出本地 URL。
+   - 说明无法运行的验证命令。
 
-## Visual Quality Rules
+## 视觉质量规则
 
-- Make the requested app or tool the first screen. Do not insert a generic hero or explanatory page before the useful experience.
-- Keep operational interfaces dense, calm, and scan-friendly. Use cards only for repeated items, modals, and genuinely framed tools.
-- Use stable dimensions for boards, toolbars, counters, tiles, and fixed-format controls so dynamic content does not shift the layout.
-- Ensure text fits inside buttons, cards, sidebars, and compact panels across desktop and mobile.
-- Avoid one-note color palettes. Use project tokens first; otherwise choose a restrained palette with sufficient contrast and more than one visual role.
-- Never let UI text or controls overlap incoherently. Fix layout constraints before calling the work complete.
+- 把用户要求的应用或工具作为第一屏。不要在真正可用的体验前插入通用 hero 或说明页。
+- 操作型界面应保持信息密度、克制和易扫读。卡片只用于重复项、弹窗和确实需要框住的工具。
+- 对面板、工具栏、计数器、图块和固定格式控件使用稳定尺寸，避免动态内容导致布局跳动。
+- 确保按钮、卡片、侧边栏和紧凑面板中的文字在桌面和移动端都能放下。
+- 避免单一色相主导的配色。优先使用项目 token；否则选择有足够对比度且承担不同视觉角色的克制配色。
+- 不允许 UI 文本或控件出现不合理重叠。完成前先修正布局约束。
 
-## Browser Verification Checklist
+## 浏览器验收清单
 
-Use this checklist before final response:
+最终回复前使用这份清单：
 
-- App/page loads without a blank screen.
-- Console has no relevant runtime errors.
-- Primary flow can be completed with mouse or keyboard.
-- Desktop layout is correctly framed and not sparse by accident.
-- Mobile layout does not clip, overlap, or hide essential controls.
-- Images, icons, fonts, and canvases render as intended.
-- Hover, focus, disabled, selected, empty, loading, and error states are handled when relevant.
+- 应用或页面加载后不是空白屏。
+- 控制台没有相关运行时错误。
+- 主流程可以用鼠标或键盘完成。
+- 桌面布局构图正确，不是意外稀疏。
+- 移动端布局没有截断、重叠或隐藏关键控件。
+- 图片、图标、字体和 canvas 按预期渲染。
+- 相关场景下已处理悬停、聚焦、禁用、选中、空状态、加载和错误状态。
 
-## When Existing Instructions Conflict
+## 当现有指令冲突时
 
-Follow the user's explicit request and the repository's own instructions first. Use this skill as the frontend execution pattern around those constraints.
+优先遵循用户的明确要求和仓库自身说明。在这些约束下，把这个 skill 作为前端执行模式使用。
